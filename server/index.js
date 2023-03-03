@@ -8,6 +8,7 @@ import helmet from 'helmet';
 import morgan from 'morgan';
 import path from 'path';
 import { fileURLToPath } from 'url';
+import authRoutes from './routes/auth.js';
 import {register} from "./controllers/auth.js"
 
 // configurations 
@@ -43,6 +44,8 @@ const upload = multer({storage});
 
 app.post('/auth/register', upload.single('image'), register);
 
+//routes
+app.use('/auth', authRoutes);
 
 // mongoose setup
 
