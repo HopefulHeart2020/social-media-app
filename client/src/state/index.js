@@ -13,6 +13,7 @@ export const authSlice = createSlice({
     reducers: {
         setMode: (state) => {
             state.mode = state.mode === "light" ? "dark" : "light";
+            
         },
 
         setLogin: (state, action) => {
