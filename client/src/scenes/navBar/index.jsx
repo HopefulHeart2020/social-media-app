@@ -128,11 +128,11 @@ const NavBar = () => {
           minWidth="300px"
           backgroundColor={background}
         >
-          <Box display="flex" justifyContent="flex-end" padding="1rem">
+          <Box display="flex" justifyContent="flex-end" p="1rem">
             <IconButton onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} >
               <Close />
             </IconButton>
-
+          </Box>
             {/* menu items */}
 
             <FlexBetween display="flex" flexDirection="column" justifyContent="center" alignItems="center" gap="3rem">
@@ -174,7 +174,7 @@ const NavBar = () => {
             </FlexBetween>
 
           </Box>
-        </Box>
+        
       )}
     </FlexBetween>
   )
