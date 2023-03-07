@@ -17,7 +17,7 @@ import {
     Button,
     IconButton,
     useMediaQuery,
-} from "@mui/materal"
+} from "@mui/material"
 
 import Dropzone from "react-dropzone"
 import FlexBetween from "../../components/FlexBetween"
@@ -176,14 +176,14 @@ const MyPostWidget = ({ picturePath }) => {
 
                 <Button
                     disabled={!post}
-                    OnClick={handlePost}
+                    onClick={handlePost}
                     sx={{
-                        color: palette.backGround.alt,
+                        color: palette.background.alt,
                         backgroundColor: palette.primary.main,
                         borderRadius: "3rem",
                     }}
                 >
-                    Post
+                    POST
                 </Button>
             </FlexBetween>
         </WidgetWrapper>
