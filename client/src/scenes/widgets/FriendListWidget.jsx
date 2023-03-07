@@ -47,7 +47,7 @@ const FriendListWidget = ({ userId }) => {
                     flexDirection="column"
                     gap="1.5rem"
                 >
-                    {friends.map(friend => (
+                    {Array.isArray(friends) && friends.map(friend => (
                         <Friend
                             key={friend._id}
                             friendId={friend._id}
