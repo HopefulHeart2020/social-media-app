@@ -10,7 +10,7 @@ const userImage = ({image, size = "60px"})=>{
             }}
             width={size}
             height={size}
-            src={`http://localhost:3001/assets/${image}`}
+            src={`https://social-media-app-server-mu.vercel.app/assets/${image}`}
             alt="user"
             />
         </Box>

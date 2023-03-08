@@ -22,7 +22,7 @@ const UserWidget = ({userId,picturePath}) => {
     const main = palette.neutral.main;
 
     const getUser = async () => {
-        const response = await fetch(`http://localhost:3001/users/${userId}`,{
+        const response = await fetch(`https://social-media-app-server-mu.vercel.app/users/${userId}`,{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
