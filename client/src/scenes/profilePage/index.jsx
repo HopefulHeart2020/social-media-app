@@ -1,4 +1,4 @@
-import { Box, useMediaQuery } from '@mui/material'
+import { Box, Typography, useMediaQuery } from '@mui/material'
 import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
@@ -22,7 +22,6 @@ const ProfilePage = () => {
     });
     const data = await response.json();
     setUser(data);
-    
   };
 
   useEffect(() => {
@@ -49,10 +48,13 @@ const ProfilePage = () => {
         </Box>
         <Box
           flexBasis={isNonMobileScreens ? "42%" : undefined}
-          mt={isNonMobileScreens ? undefined : "2rem"}
+          mt={isNonMobileScreens ? "undefined" : "2rem"}
         >
-          <MyPostWidget picturePath={user.picturePath} />
-          <Box m="2rem 0" />
+          <Typography variant="h4" fontWeight="bold" align='center'>
+            Posts
+          </Typography>
+          {/* <MyPostWidget picturePath={user.picturePath} /> */}
+          {/* <Box m="2rem 0" /> */}
           <PostsWidget userId={userId} isProfile />
         </Box>
       </Box>
