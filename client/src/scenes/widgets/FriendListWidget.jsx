@@ -10,10 +10,13 @@ import { useDispatch, useSelector } from 'react-redux';
 import { setFriends } from '../../state';
 
 const FriendListWidget = ({ userId }) => {
+    const _id = useSelector(state => state.user._id);
     const dispatch = useDispatch();
     const { palette } = useTheme();
     const token = useSelector(state => state.token);
     const friends = useSelector(state => state.user.friends);
+
+    const isNonProfile = userId !== _id;
 
     const getFriends = async () => {
         const response = await fetch(`http://localhost:3001/users/${userId}/friends`, {
@@ -54,6 +57,7 @@ const FriendListWidget = ({ userId }) => {
                             name={`${friend.firstName} ${friend.lastName}`}
                             subtitle={friend.occupation}
                             userPicturePath={friend.picturePath}
+                            isNonProfile={isNonProfile}
                         />
                     ))}
                 </Box>

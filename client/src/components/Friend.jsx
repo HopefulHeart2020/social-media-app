@@ -1,12 +1,13 @@
 import { PersonAddOutlined, PersonRemoveOutlined } from "@mui/icons-material";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,useParams } from "react-router-dom";
 import { setFriends } from "../state";
 import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
+    
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { _id } = useSelector((state) => state.user);
@@ -21,6 +22,8 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
 
     const isFriend = friends?.find((friend) => friend._id === friendId);
+
+    const isMe = _id === friendId ;
 
     const patchFriend = async () => {
         const response = await fetch(
@@ -65,6 +68,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                     </Typography>
                 </Box>
             </FlexBetween>
+            {!isMe && (
             <IconButton
                 onClick={() => patchFriend()}
                 sx={{ backgroundColor: primaryLight, p: "0.6rem" }}
@@ -75,6 +79,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
                     <PersonAddOutlined sx={{ color: primaryDark }} />
                 )}
             </IconButton>
+            )}
         </FlexBetween>
     );
 };
