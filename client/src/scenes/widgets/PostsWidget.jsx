@@ -4,13 +4,13 @@ import { setPosts } from "../../state";
 import PostWidget from "./PostWidget";
 
 const PostsWidget = ({ userId, isProfile = false }) => {
-    
+    const url  = useSelector((state) => state.URL);
     const dispatch = useDispatch();
     const posts = useSelector((state) => state.posts);
     const token = useSelector((state) => state.token);
 
     const getPosts = async () => {
-        const response = await fetch("https://social-media-app-server-mu.vercel.app/posts", {
+        const response = await fetch(`https://3.75.176.58:8080/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -20,7 +20,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
     const getUserPosts = async () => {
         const response = await fetch(
-            `https://social-media-app-server-mu.vercel.app/posts/${userId}/posts`,
+            `https://3.75.176.58:8080/posts/${userId}/posts`,
             {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },

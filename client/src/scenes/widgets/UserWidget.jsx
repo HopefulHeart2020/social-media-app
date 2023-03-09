@@ -13,6 +13,7 @@ import { useEffect,useState } from "react"
 import { useNavigate } from "react-router-dom"
 
 const UserWidget = ({userId,picturePath}) => {
+    const url  = useSelector((state) => state.URL);
     const [user,setUser] = useState(null)
     const navigate = useNavigate()
     const {palette} = useTheme()
@@ -22,7 +23,7 @@ const UserWidget = ({userId,picturePath}) => {
     const main = palette.neutral.main;
 
     const getUser = async () => {
-        const response = await fetch(`https://social-media-app-server-mu.vercel.app/users/${userId}`,{
+        const response = await fetch(`https://3.75.176.58:8080/users/${userId}`,{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

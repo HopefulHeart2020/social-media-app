@@ -1,6 +1,10 @@
 import { Box } from "@mui/material";
+import { useSelector } from "react-redux";
 
 const userImage = ({image, size = "60px"})=>{
+    const url  = "https://3.75.176.58:8080";
+
+    
     return (
         <Box width={size} height={size}>
             <img 
@@ -10,7 +14,7 @@ const userImage = ({image, size = "60px"})=>{
             }}
             width={size}
             height={size}
-            src={`https://social-media-app-server-mu.vercel.app/assets/${image}`}
+            src={`${url}/assets/${image}`}
             alt="user"
             />
         </Box>

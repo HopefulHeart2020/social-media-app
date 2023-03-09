@@ -23,6 +23,7 @@ const PostWidget = ({
     likes,
     comments,
 }) => {
+    const url  = useSelector((state) => state.URL);
     const [isComments, setIsComments] = useState(false);
     const dispatch = useDispatch();
     const token = useSelector((state) => state.token);
@@ -35,7 +36,7 @@ const PostWidget = ({
     const primary = palette.primary.main;
 
     const patchLike = async () => {
-        const response = await fetch(`https://social-media-app-server-mu.vercel.app/posts/${postId}/like`, {
+        const response = await fetch(`https://3.75.176.58:8080/posts/${postId}/like`, {
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,

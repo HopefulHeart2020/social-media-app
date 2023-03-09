@@ -7,7 +7,6 @@ import FlexBetween from "./FlexBetween";
 import UserImage from "./UserImage";
 
 const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
-    
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const { _id } = useSelector((state) => state.user);
@@ -27,7 +26,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
     const patchFriend = async () => {
         const response = await fetch(
-            `https://social-media-app-server-mu.vercel.app/users/${_id}/${friendId}`,
+            `https://3.75.176.58:8080/users/${_id}/${friendId}`,
             {
                 method: "PATCH",
                 headers: {

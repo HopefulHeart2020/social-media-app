@@ -10,13 +10,14 @@ import UserWidget from '../widgets/UserWidget'
 
 
 const ProfilePage = () => {
+  
   const [user, setUser] = useState(null);
   const { userId } = useParams();
   const token = useSelector((state) => state.token);
   const isNonMobileScreens = useMediaQuery("(min-width:1000px)");
 
   const getUser = async () => {
-    const response = await fetch(`https://social-media-app-server-mu.vercel.app/users/${userId}`, {
+    const response = await fetch(`https://3.75.176.58:8080/users/${userId}`, {
       method: "GET",
       headers: { Authorization: `Bearer ${token}` },
     });

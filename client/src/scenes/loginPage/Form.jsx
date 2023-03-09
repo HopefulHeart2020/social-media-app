@@ -11,7 +11,7 @@ import EditOutlinedIcon from "@mui/icons-material/EditOutlined";
 import { Formik } from "formik";
 import * as yup from "yup";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch,useSelector } from "react-redux";
 import { setLogin } from "../../state";
 import Dropzone from "react-dropzone";
 import FlexBetween from "../../components/FlexBetween";
@@ -47,6 +47,8 @@ const initialValuesLogin = {
 };
 
 const Form = () => {
+    
+
     const [pageType, setPageType] = useState("login");
     const { palette } = useTheme();
     const dispatch = useDispatch();
@@ -56,6 +58,7 @@ const Form = () => {
     const isRegister = pageType === "register";
 
     const register = async (values, onSubmitProps) => {
+        
         // this allows us to send form info with image
         const formData = new FormData();
         for (let value in values) {
@@ -64,7 +67,7 @@ const Form = () => {
         formData.append("picturePath", values.picture.name);
 
         const savedUserResponse = await fetch(
-            "https://social-media-app-server-mu.vercel.app/auth/register",
+            `https://3.75.176.58:8080/auth/register`,
             {
                 method: "POST",
                 body: formData,
@@ -79,7 +82,8 @@ const Form = () => {
     };
 
     const login = async (values, onSubmitProps) => {
-        const loggedInResponse = await fetch("https://social-media-app-server-mu.vercel.app/auth/login", {
+        
+        const loggedInResponse = await fetch(`https://3.75.176.58:8080/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(values),

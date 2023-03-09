@@ -19,7 +19,7 @@ const FriendListWidget = ({ userId }) => {
     const isNonProfile = userId !== _id;
 
     const getFriends = async () => {
-        const response = await fetch(`https://social-media-app-server-mu.vercel.app/users/${userId}/friends`, {
+        const response = await fetch(`https://3.75.176.58:8080/users/${userId}/friends`, {
             method: "GET",
             headers: {
                 Authorization: `Bearer ${token}`,
