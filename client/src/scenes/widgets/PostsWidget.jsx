@@ -10,7 +10,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
     const token = useSelector((state) => state.token);
 
     const getPosts = async () => {
-        const response = await fetch(`https://3.75.176.58:8080/posts`, {
+        const response = await fetch(`http://3.75.176.58:8080/posts`, {
             method: "GET",
             headers: { Authorization: `Bearer ${token}` },
         });
@@ -20,7 +20,7 @@ const PostsWidget = ({ userId, isProfile = false }) => {
 
     const getUserPosts = async () => {
         const response = await fetch(
-            `https://3.75.176.58:8080/posts/${userId}/posts`,
+            `http://3.75.176.58:8080/posts/${userId}/posts`,
             {
                 method: "GET",
                 headers: { Authorization: `Bearer ${token}` },

@@ -36,7 +36,7 @@ const PostWidget = ({
     const primary = palette.primary.main;
 
     const patchLike = async () => {
-        const response = await fetch(`https://3.75.176.58:8080/posts/${postId}/like`, {
+        const response = await fetch(`http://3.75.176.58:8080/posts/${postId}/like`, {
             method: "PATCH",
             headers: {
                 Authorization: `Bearer ${token}`,

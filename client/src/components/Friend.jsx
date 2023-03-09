@@ -26,7 +26,7 @@ const Friend = ({ friendId, name, subtitle, userPicturePath }) => {
 
     const patchFriend = async () => {
         const response = await fetch(
-            `https://3.75.176.58:8080/users/${_id}/${friendId}`,
+            `http://3.75.176.58:8080/users/${_id}/${friendId}`,
             {
                 method: "PATCH",
                 headers: {
