@@ -60,7 +60,7 @@ app.use('/posts', postsRoutes);
 
 // mongoose setup
 
-const PORT = process.env.PORT || 6001;
+const PORT = process.env.PORT || 8080;
 mongoose.connect(process.env.MONGO_URL, { useNewUrlParser: true, useUnifiedTopology: true })
     .then(() => {
         app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
