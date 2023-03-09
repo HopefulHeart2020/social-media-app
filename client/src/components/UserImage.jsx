@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 
 const userImage = ({image, size = "60px"})=>{
-    const url  = "https://3.75.176.58:8080";
+    const url  = "http://3.75.176.58:8080";
 
     
     return (
