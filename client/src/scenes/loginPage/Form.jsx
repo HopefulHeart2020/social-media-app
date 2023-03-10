@@ -67,7 +67,7 @@ const Form = () => {
         formData.append("picturePath", values.picture.name);
 
         const savedUserResponse = await fetch(
-            `http://3.75.176.58:8080/auth/register`,
+            `https://social-media-app-en2b.onrender.com/auth/register`,
             {
                 method: "POST",
                 body: formData,
@@ -83,7 +83,7 @@ const Form = () => {
 
     const login = async (values, onSubmitProps) => {
         
-        const loggedInResponse = await fetch(`http://3.75.176.58:8080/auth/login`, {
+        const loggedInResponse = await fetch(`https://social-media-app-en2b.onrender.com/auth/login`, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(values),
