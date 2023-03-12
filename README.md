@@ -20,7 +20,7 @@ This is a social media app designed for sociopathic individuals. It is a place w
 
 ## Technologies Used
 
-![My Skills](https://skillicons.dev/icons?i=js,react,redux,materialui,node,express,mongodb,git,npm)
+![My Skills](https://skillicons.dev/icons?i=js,react,redux,materialui,nodejs,express,mongodb,git,npm)
 
 ## Installation
 
