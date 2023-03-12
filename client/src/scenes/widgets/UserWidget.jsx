@@ -23,7 +23,7 @@ const UserWidget = ({userId,picturePath}) => {
     const main = palette.neutral.main;
 
     const getUser = async () => {
-        const response = await fetch(`https://social-media-app-en2b.onrender.com/users/${userId}`,{
+        const response = await fetch(`http://localhost:5001/users/${userId}`,{
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

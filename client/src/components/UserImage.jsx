@@ -2,7 +2,7 @@ import { Box } from "@mui/material";
 import { useSelector } from "react-redux";
 
 const userImage = ({image, size = "60px"})=>{
-    const url  = "https://social-media-app-en2b.onrender.com";
+    const url  = "http://localhost:5001";
 
     
     return (
